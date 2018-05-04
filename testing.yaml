@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-server-side
+spec:
+  containers:
+  - name: my-server-side
+    image: polaksh/devops-exam-server
+    ports:
+    - containerPort: 9090
