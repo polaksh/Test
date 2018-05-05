@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: server-side
+spec:
+  selector:
+    app: serverapp
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: http
