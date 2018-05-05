@@ -4,8 +4,7 @@ metadata:
   name: server-side
 spec:
   selector:
-    app: server-side
-    tier: backend
+    app: serverapp
   ports:
   - protocol: TCP
     port: 80
@@ -14,23 +13,23 @@ spec:
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: server-side
+  name: serverapp
 spec:
   selector:
     matchLabels:
-      app: server-side
+      app: serverapp
       tier: backend
       track: stable
   replicas: 2
   template:
     metadata:
       labels:
-        app: server-side
+        app: serverapp
         tier: backend
         track: stable
     spec:
       containers:
-        - name: server-side
+        - name: serverapp
           image: "docker.io/polaksh/devops-exam-server:latest"
           ports:
             - name: http
